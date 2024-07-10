@@ -1,19 +1,20 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { SetStateAction, useState } from "react";
 //https://pokeapi.co/api/v2/
 
 function App() {
   const [pokemonName, setPokemonName] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { value: SetStateAction<string> } }) => {
     setPokemonName(e.target.value);
   };
 
+ const procuraPokemon =
   return (
     <>
       <h1>Pokemon</h1>
       <input type="text" value={pokemonName} onChange={handleChange} />
-      <button>OK</button>
+      <button onClick={procuraPokemon}>OK</button>
     </>
   );
 }
